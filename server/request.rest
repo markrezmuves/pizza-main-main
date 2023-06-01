@@ -1,0 +1,154 @@
+### login
+post http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "userName": "feri",
+    "password": "jozsi123"
+}
+
+### token kérés
+post http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmVyaSIsImlhdCI6MTY3Njc1Nzg5N30.HcxLe7gKFag5Tjk8lwN-4eOo3CAGBazffU8xKLTTSW8"
+}
+
+### logout
+delete http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmVyaSIsImlhdCI6MTY3Njc1NTI0M30.aS6yK0l548OjCU3irhz95vTLN2TuA9i4NFJsgXPBXqg"
+}
+
+### logout all
+delete http://localhost:4000/logoutall
+Content-Type: application/json
+
+
+### Userek
+get http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmVyaSIsImlhdCI6MTY3Njc1NDcwOCwiZXhwIjoxNjc2NzU1NjA4fQ.KYhG-su5z7jQJJzq9MYJr2J3lBnnPw6oZIjWRT4X6cs
+
+### Egy user
+get http://localhost:3000/users/15
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
+
+### User hozzáadása (regisztráció)
+### mark, 123
+post http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "firstName": "Márk",
+    "lastName": "Rézműves",
+    "gender": "férfi",
+    "userName": "mark",
+    "email": "rezmuves.mark@gmail.com",
+    "password": "123",
+    "number": 1
+}
+
+### User módosítása
+put http://localhost:3000/users/14
+Content-Type: application/json
+
+{
+    "firstName": "Géza",
+    "lastName": "Balog",
+    "gender": "férfi",
+    "userName": "geza",
+    "email": "balog.geza@gmail.com",
+    "password": "test123",
+    "number": 123456
+}
+
+### Delete user
+delete http://localhost:3000/users/17
+### #endregion users
+
+### ---------------------------------------
+### get pizza
+get http://localhost:3000/pizzak
+
+### get pizza
+get http://localhost:3000/pizzak/1
+
+### User hozzáadása (regisztráció)
+### mark, 123
+post http://localhost:3000/pizzak
+Content-Type: application/json
+
+{
+     "nev": "Bolognai",
+      "meret": 22,
+      "ar": 1150
+}
+
+
+
+
+### Delete user
+delete http://localhost:3000/pizzak/121
+
+###put
+put http://localhost:3000/pizzak/124
+Content-Type: application/json
+
+{
+     "nev": "Bolognai",
+      "meret": 22,
+      "ar": 1150
+}
+
+###get pizzak szurese 
+get http://localhost:3000/pizzakkeres/sajt
+
+### get cim
+get http://localhost:3000/cimek/1
+
+### get cim
+get http://localhost:3000/cimek/1
+
+### post cim
+post http://localhost:3000/cimek
+Content-Type: application/json
+
+{
+     "nev": "Torles",
+     "utca": "Kis Utca",
+     "hsz": 11
+}
+###put
+put http://localhost:3000/cimek/100
+
+Content-Type: application/json
+
+{
+     "nev": "Bolognai",
+      "utca": "TesztUtca",
+      "hsz": 1150
+}
+
+### Delete user
+delete http://localhost:3000/cimek/391
+
+### get nevUtcaHsz
+get http://localhost:3000/nevUtcaHsz
+
+
+### rendeles post
+post http://localhost:3000/rendeles
+Content-Type: application/json
+
+{
+     "pizzaid": 50,
+      "darab": 2,
+      "cimid": 184,
+      "szallitas": "2023.05.12. 12:00"
+}
+
+### get pizzaRendelesek
+get http://localhost:3000/pizzaRendelesek/1
